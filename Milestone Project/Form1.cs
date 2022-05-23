@@ -17,7 +17,13 @@ namespace Milestone_Project
             InitializeComponent();
         }
 
-        private void label3_Click(object sender, EventArgs e)
+
+        private void addButton_click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
         {
 
         }

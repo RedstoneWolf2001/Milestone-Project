@@ -28,158 +28,160 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.DataListBox = new System.Windows.Forms.ListBox();
+            this.addButton = new System.Windows.Forms.Button();
+            this.editButton = new System.Windows.Forms.Button();
+            this.removeButton = new System.Windows.Forms.Button();
+            this.reorderButton = new System.Windows.Forms.Button();
+            this.readGenreTB = new System.Windows.Forms.TextBox();
+            this.readTitleTB = new System.Windows.Forms.TextBox();
+            this.searchTitleTB = new System.Windows.Forms.TextBox();
+            this.searchGenreTB = new System.Windows.Forms.TextBox();
+            this.readIndexTB = new System.Windows.Forms.TextBox();
+            this.searchIndexTB = new System.Windows.Forms.TextBox();
+            this.GenreLB = new System.Windows.Forms.Label();
+            this.IndexLB = new System.Windows.Forms.Label();
+            this.TitleLB = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // listBox1
+            // DataListBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(13, 13);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(321, 95);
-            this.listBox1.TabIndex = 0;
+            this.DataListBox.FormattingEnabled = true;
+            this.DataListBox.Location = new System.Drawing.Point(13, 13);
+            this.DataListBox.Name = "DataListBox";
+            this.DataListBox.Size = new System.Drawing.Size(321, 95);
+            this.DataListBox.TabIndex = 0;
             // 
-            // button1
+            // addButton
             // 
-            this.button1.Location = new System.Drawing.Point(13, 167);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.addButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.addButton.Location = new System.Drawing.Point(13, 167);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(75, 23);
+            this.addButton.TabIndex = 1;
+            this.addButton.Text = "Add";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_click);
             // 
-            // button2
+            // editButton
             // 
-            this.button2.Location = new System.Drawing.Point(95, 167);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Edit";
-            this.button2.UseVisualStyleBackColor = true;
+            this.editButton.Location = new System.Drawing.Point(95, 167);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(75, 23);
+            this.editButton.TabIndex = 2;
+            this.editButton.Text = "Edit";
+            this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
-            // button3
+            // removeButton
             // 
-            this.button3.Location = new System.Drawing.Point(177, 167);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Remove";
-            this.button3.UseVisualStyleBackColor = true;
+            this.removeButton.Location = new System.Drawing.Point(177, 167);
+            this.removeButton.Name = "removeButton";
+            this.removeButton.Size = new System.Drawing.Size(75, 23);
+            this.removeButton.TabIndex = 3;
+            this.removeButton.Text = "Remove";
+            this.removeButton.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // reorderButton
             // 
-            this.button4.Location = new System.Drawing.Point(259, 167);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Reorder";
-            this.button4.UseVisualStyleBackColor = true;
+            this.reorderButton.Location = new System.Drawing.Point(259, 167);
+            this.reorderButton.Name = "reorderButton";
+            this.reorderButton.Size = new System.Drawing.Size(75, 23);
+            this.reorderButton.TabIndex = 4;
+            this.reorderButton.Text = "Reorder";
+            this.reorderButton.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // readGenreTB
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 141);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(75, 20);
-            this.textBox1.TabIndex = 5;
+            this.readGenreTB.Location = new System.Drawing.Point(13, 141);
+            this.readGenreTB.Name = "readGenreTB";
+            this.readGenreTB.Size = new System.Drawing.Size(75, 20);
+            this.readGenreTB.TabIndex = 5;
             // 
-            // textBox2
+            // readTitleTB
             // 
-            this.textBox2.Location = new System.Drawing.Point(142, 141);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(192, 20);
-            this.textBox2.TabIndex = 6;
+            this.readTitleTB.Location = new System.Drawing.Point(142, 141);
+            this.readTitleTB.Name = "readTitleTB";
+            this.readTitleTB.Size = new System.Drawing.Size(192, 20);
+            this.readTitleTB.TabIndex = 6;
             // 
-            // textBox3
+            // searchTitleTB
             // 
-            this.textBox3.Location = new System.Drawing.Point(142, 196);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(192, 20);
-            this.textBox3.TabIndex = 8;
-            this.textBox3.Text = "Search";
+            this.searchTitleTB.Location = new System.Drawing.Point(142, 196);
+            this.searchTitleTB.Name = "searchTitleTB";
+            this.searchTitleTB.Size = new System.Drawing.Size(192, 20);
+            this.searchTitleTB.TabIndex = 8;
+            this.searchTitleTB.Text = "Search";
             // 
-            // textBox4
+            // searchGenreTB
             // 
-            this.textBox4.Location = new System.Drawing.Point(13, 196);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(75, 20);
-            this.textBox4.TabIndex = 7;
-            this.textBox4.Text = "Type?";
+            this.searchGenreTB.Location = new System.Drawing.Point(13, 196);
+            this.searchGenreTB.Name = "searchGenreTB";
+            this.searchGenreTB.Size = new System.Drawing.Size(75, 20);
+            this.searchGenreTB.TabIndex = 7;
+            this.searchGenreTB.Text = "Type?";
             // 
-            // textBox5
+            // readIndexTB
             // 
-            this.textBox5.Location = new System.Drawing.Point(95, 141);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(41, 20);
-            this.textBox5.TabIndex = 9;
+            this.readIndexTB.Location = new System.Drawing.Point(95, 141);
+            this.readIndexTB.Name = "readIndexTB";
+            this.readIndexTB.Size = new System.Drawing.Size(41, 20);
+            this.readIndexTB.TabIndex = 9;
             // 
-            // textBox6
+            // searchIndexTB
             // 
-            this.textBox6.Location = new System.Drawing.Point(95, 196);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(41, 20);
-            this.textBox6.TabIndex = 10;
-            this.textBox6.Text = "Num";
+            this.searchIndexTB.Location = new System.Drawing.Point(95, 196);
+            this.searchIndexTB.Name = "searchIndexTB";
+            this.searchIndexTB.Size = new System.Drawing.Size(41, 20);
+            this.searchIndexTB.TabIndex = 10;
+            this.searchIndexTB.Text = "Num";
             // 
-            // label1
+            // GenreLB
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 115);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Genre";
+            this.GenreLB.AutoSize = true;
+            this.GenreLB.Location = new System.Drawing.Point(13, 115);
+            this.GenreLB.Name = "GenreLB";
+            this.GenreLB.Size = new System.Drawing.Size(36, 13);
+            this.GenreLB.TabIndex = 11;
+            this.GenreLB.Text = "Genre";
             // 
-            // label2
+            // IndexLB
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(95, 115);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Index";
+            this.IndexLB.AutoSize = true;
+            this.IndexLB.Location = new System.Drawing.Point(95, 115);
+            this.IndexLB.Name = "IndexLB";
+            this.IndexLB.Size = new System.Drawing.Size(33, 13);
+            this.IndexLB.TabIndex = 12;
+            this.IndexLB.Text = "Index";
             // 
-            // label3
+            // TitleLB
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(142, 115);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 13);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Title";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.TitleLB.AutoSize = true;
+            this.TitleLB.Location = new System.Drawing.Point(142, 115);
+            this.TitleLB.Name = "TitleLB";
+            this.TitleLB.Size = new System.Drawing.Size(27, 13);
+            this.TitleLB.TabIndex = 13;
+            this.TitleLB.Text = "Title";
             // 
             // Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(357, 234);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.TitleLB);
+            this.Controls.Add(this.IndexLB);
+            this.Controls.Add(this.GenreLB);
+            this.Controls.Add(this.searchIndexTB);
+            this.Controls.Add(this.readIndexTB);
+            this.Controls.Add(this.searchTitleTB);
+            this.Controls.Add(this.searchGenreTB);
+            this.Controls.Add(this.readTitleTB);
+            this.Controls.Add(this.readGenreTB);
+            this.Controls.Add(this.reorderButton);
+            this.Controls.Add(this.removeButton);
+            this.Controls.Add(this.editButton);
+            this.Controls.Add(this.addButton);
+            this.Controls.Add(this.DataListBox);
             this.Name = "Inventory";
             this.Text = "Inventory";
             this.ResumeLayout(false);
@@ -189,20 +191,20 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListBox DataListBox;
+        private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.Button editButton;
+        private System.Windows.Forms.Button removeButton;
+        private System.Windows.Forms.Button reorderButton;
+        private System.Windows.Forms.TextBox readGenreTB;
+        private System.Windows.Forms.TextBox readTitleTB;
+        private System.Windows.Forms.TextBox searchTitleTB;
+        private System.Windows.Forms.TextBox searchGenreTB;
+        private System.Windows.Forms.TextBox readIndexTB;
+        private System.Windows.Forms.TextBox searchIndexTB;
+        private System.Windows.Forms.Label GenreLB;
+        private System.Windows.Forms.Label IndexLB;
+        private System.Windows.Forms.Label TitleLB;
     }
 }
 
