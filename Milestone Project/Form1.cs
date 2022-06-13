@@ -18,6 +18,7 @@ namespace Milestone_Project
         }
 
 
+
         private void addButton_click(object sender, EventArgs e)
         {
 
@@ -28,4 +29,60 @@ namespace Milestone_Project
 
         }
     }
+
+    public class Book
+    {
+
+        private string Genre;
+        private int Index;
+        private string Title;
+
+        public Book(string genre, int index, string title)
+        {
+            Genre = genre;
+            Index = index;
+            Title = title;
+        }
+
+        public string GetGenre()
+        {
+            return Genre;
+        }
+
+        public string GetTitle()
+        {
+            return Title;
+        }
+
+        public int GetIndex()
+        {
+            return Index;
+        }
+
+        public void SetGenre(string genre)
+        {
+            Genre = genre.Trim();
+        }
+
+        public void SetTitle(string title)
+        {
+            Title = title.Trim();
+        }
+
+        public bool MoveIndex(int index)
+        {
+            if (Index != index)
+            {
+                Index = index;
+                return true;
+            }
+            else { return false; }
+        }
+
+    }
+
+
+
+
+
 }
