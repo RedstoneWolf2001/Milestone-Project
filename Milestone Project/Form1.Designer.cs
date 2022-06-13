@@ -81,6 +81,7 @@
             this.removeButton.TabIndex = 3;
             this.removeButton.Text = "Remove";
             this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
             // reorderButton
             // 
@@ -123,6 +124,7 @@
             // 
             // readIndexTB
             // 
+            this.readIndexTB.Enabled = false;
             this.readIndexTB.Location = new System.Drawing.Point(95, 141);
             this.readIndexTB.Name = "readIndexTB";
             this.readIndexTB.Size = new System.Drawing.Size(41, 20);

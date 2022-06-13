@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,21 +16,28 @@ namespace Milestone_Project
         public Inventory()
         {
             InitializeComponent();
+            readIndexTB.Text = DataListBox.Items.Count.ToString();
         }
 
 
 
         private void addButton_click(object sender, EventArgs e)
         {
-            Book input = new Book(readGenreTB.Text, int.Parse(readIndexTB.Text), readTitleTB.Text);            
-            DataListBox.Items.Add(input.ToString());
+            Book input = new Book(readGenreTB.Text, DataListBox.Items.Count + 1, readTitleTB.Text);
+            DataListBox.Items.Add(input);
+            readIndexTB.Text = DataListBox.Items.Count.ToString();
         }
 
         private void editButton_Click(object sender, EventArgs e)
         {
+            Book input = DataListBox.SelectedItem;
 
         }
 
+        private void removeButton_Click(object sender, EventArgs e)
+        {
+            DataListBox.Items.Remove(DataListBox.SelectedIndex);
+        }
     }
 
 
@@ -80,7 +88,7 @@ namespace Milestone_Project
 
         public override string ToString()
         {
-            return Genre + " " + Title;
+            return Genre + " " + Index + " " + Title;
         }
 
     }
