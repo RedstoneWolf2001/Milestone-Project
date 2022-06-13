@@ -21,14 +21,18 @@ namespace Milestone_Project
 
         private void addButton_click(object sender, EventArgs e)
         {
-
+            Book input = new Book(readGenreTB.Text, int.Parse(readIndexTB.Text), readTitleTB.Text);            
+            DataListBox.Items.Add(input.ToString());
         }
 
         private void editButton_Click(object sender, EventArgs e)
         {
 
         }
+
     }
+
+
 
     public class Book
     {
@@ -69,18 +73,17 @@ namespace Milestone_Project
             Title = title.Trim();
         }
 
-        public bool MoveIndex(int index)
+        //public bool MoveAfter(Book book)
+        //{
+        //  Will continue in next milestone.    
+        //}
+
+        public override string ToString()
         {
-            if (Index != index)
-            {
-                Index = index;
-                return true;
-            }
-            else { return false; }
+            return Genre + " " + Title;
         }
 
     }
-
 
 
 
