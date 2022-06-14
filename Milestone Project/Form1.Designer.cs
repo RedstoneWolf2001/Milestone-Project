@@ -38,10 +38,10 @@
             this.searchTitleTB = new System.Windows.Forms.TextBox();
             this.searchGenreTB = new System.Windows.Forms.TextBox();
             this.readIndexTB = new System.Windows.Forms.TextBox();
-            this.searchIndexTB = new System.Windows.Forms.TextBox();
             this.GenreLB = new System.Windows.Forms.Label();
             this.IndexLB = new System.Windows.Forms.Label();
             this.TitleLB = new System.Windows.Forms.Label();
+            this.searchIndexTB = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // DataListBox
@@ -89,8 +89,9 @@
             this.reorderButton.Name = "reorderButton";
             this.reorderButton.Size = new System.Drawing.Size(75, 23);
             this.reorderButton.TabIndex = 4;
-            this.reorderButton.Text = "Reorder";
+            this.reorderButton.Text = "Set";
             this.reorderButton.UseVisualStyleBackColor = true;
+            this.reorderButton.Click += new System.EventHandler(this.reorderButton_Click);
             // 
             // readGenreTB
             // 
@@ -111,7 +112,7 @@
             this.searchTitleTB.Location = new System.Drawing.Point(142, 196);
             this.searchTitleTB.Name = "searchTitleTB";
             this.searchTitleTB.Size = new System.Drawing.Size(192, 20);
-            this.searchTitleTB.TabIndex = 8;
+            this.searchTitleTB.TabIndex = 9;
             this.searchTitleTB.Text = "Search";
             // 
             // searchGenreTB
@@ -129,14 +130,6 @@
             this.readIndexTB.Name = "readIndexTB";
             this.readIndexTB.Size = new System.Drawing.Size(41, 20);
             this.readIndexTB.TabIndex = 9;
-            // 
-            // searchIndexTB
-            // 
-            this.searchIndexTB.Location = new System.Drawing.Point(95, 196);
-            this.searchIndexTB.Name = "searchIndexTB";
-            this.searchIndexTB.Size = new System.Drawing.Size(41, 20);
-            this.searchIndexTB.TabIndex = 10;
-            this.searchIndexTB.Text = "Num";
             // 
             // GenreLB
             // 
@@ -164,6 +157,15 @@
             this.TitleLB.Size = new System.Drawing.Size(27, 13);
             this.TitleLB.TabIndex = 13;
             this.TitleLB.Text = "Title";
+            // 
+            // searchIndexTB
+            // 
+            this.searchIndexTB.Enabled = false;
+            this.searchIndexTB.Location = new System.Drawing.Point(95, 196);
+            this.searchIndexTB.Name = "searchIndexTB";
+            this.searchIndexTB.Size = new System.Drawing.Size(41, 20);
+            this.searchIndexTB.TabIndex = 8;
+            this.searchIndexTB.Text = "Num";
             // 
             // Inventory
             // 
@@ -203,10 +205,10 @@
         private System.Windows.Forms.TextBox searchTitleTB;
         private System.Windows.Forms.TextBox searchGenreTB;
         private System.Windows.Forms.TextBox readIndexTB;
-        private System.Windows.Forms.TextBox searchIndexTB;
         private System.Windows.Forms.Label GenreLB;
         private System.Windows.Forms.Label IndexLB;
         private System.Windows.Forms.Label TitleLB;
+        private System.Windows.Forms.TextBox searchIndexTB;
     }
 }
 

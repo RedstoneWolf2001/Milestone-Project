@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*  Code by Chris Peterson
+    Milestone 2
+    06-13-2022 at turn in
+*/
+
+using System;
 using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,20 +28,38 @@ namespace Milestone_Project
 
         private void addButton_click(object sender, EventArgs e)
         {
-            Book input = new Book(readGenreTB.Text, DataListBox.Items.Count + 1, readTitleTB.Text);
+            Book input = new Book(readGenreTB.Text, DataListBox.Items.Count, readTitleTB.Text);
             DataListBox.Items.Add(input);
             readIndexTB.Text = DataListBox.Items.Count.ToString();
+            readGenreTB.Clear();
+            readTitleTB.Clear();
         }
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            Book input = DataListBox.SelectedItem;
+            Book input = (Book)DataListBox.SelectedItem;
+            input.SetGenre(readGenreTB.Text);
+            input.SetTitle(readTitleTB.Text);
+            input.SetIndex(int.Parse(readIndexTB.Text));
+
+            DataListBox.Items.Insert(input.GetIndex(), input);
+            readIndexTB.Text = DataListBox.Items.Count.ToString();
+
+
 
         }
 
         private void removeButton_Click(object sender, EventArgs e)
         {
-            DataListBox.Items.Remove(DataListBox.SelectedIndex);
+            
+        }
+
+        private void reorderButton_Click(object sender, EventArgs e)
+        {
+            Book input = (Book)DataListBox.SelectedItem;
+            searchGenreTB.Text = input.GetGenre();
+            searchTitleTB.Text = input.GetTitle();
+            searchIndexTB.Text = input.GetIndex().ToString();
         }
     }
 
@@ -79,6 +102,11 @@ namespace Milestone_Project
         public void SetTitle(string title)
         {
             Title = title.Trim();
+        }
+
+        public void SetIndex(int index)
+        {
+            Index = index;
         }
 
         //public bool MoveAfter(Book book)
