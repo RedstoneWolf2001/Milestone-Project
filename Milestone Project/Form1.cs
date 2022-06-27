@@ -45,13 +45,11 @@ namespace Milestone_Project
             DataListBox.Items.Insert(input.GetIndex(), input);
             readIndexTB.Text = DataListBox.Items.Count.ToString();
 
-
-
         }
 
         private void removeButton_Click(object sender, EventArgs e)
         {
-            
+            DataListBox.Items.Remove(DataListBox.SelectedItem);
         }
 
         private void reorderButton_Click(object sender, EventArgs e)
@@ -60,6 +58,16 @@ namespace Milestone_Project
             searchGenreTB.Text = input.GetGenre();
             searchTitleTB.Text = input.GetTitle();
             searchIndexTB.Text = input.GetIndex().ToString();
+        }
+
+        private void DataListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Book input = (Book)DataListBox.SelectedItem;
+            readGenreTB.Text = input.GetGenre();
+            readTitleTB.Text = input.GetTitle();
+            readIndexTB.Text = input.GetIndex().ToString();
+
+
         }
     }
 

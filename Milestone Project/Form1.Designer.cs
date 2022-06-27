@@ -51,6 +51,7 @@
             this.DataListBox.Name = "DataListBox";
             this.DataListBox.Size = new System.Drawing.Size(321, 95);
             this.DataListBox.TabIndex = 0;
+            this.DataListBox.SelectedIndexChanged += new System.EventHandler(this.DataListBox_SelectedIndexChanged);
             // 
             // addButton
             // 
@@ -125,7 +126,6 @@
             // 
             // readIndexTB
             // 
-            this.readIndexTB.Enabled = false;
             this.readIndexTB.Location = new System.Drawing.Point(95, 141);
             this.readIndexTB.Name = "readIndexTB";
             this.readIndexTB.Size = new System.Drawing.Size(41, 20);
