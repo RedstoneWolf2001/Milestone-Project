@@ -32,16 +32,16 @@
             this.addButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
-            this.reorderButton = new System.Windows.Forms.Button();
+            this.searchButton = new System.Windows.Forms.Button();
             this.readGenreTB = new System.Windows.Forms.TextBox();
             this.readTitleTB = new System.Windows.Forms.TextBox();
             this.searchTitleTB = new System.Windows.Forms.TextBox();
             this.searchGenreTB = new System.Windows.Forms.TextBox();
-            this.readIndexTB = new System.Windows.Forms.TextBox();
             this.GenreLB = new System.Windows.Forms.Label();
-            this.IndexLB = new System.Windows.Forms.Label();
             this.TitleLB = new System.Windows.Forms.Label();
-            this.searchIndexTB = new System.Windows.Forms.TextBox();
+            this.QuantityLB = new System.Windows.Forms.Label();
+            this.searchQuantityTB = new System.Windows.Forms.TextBox();
+            this.readQuantityTB = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // DataListBox
@@ -84,15 +84,15 @@
             this.removeButton.UseVisualStyleBackColor = true;
             this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
-            // reorderButton
+            // searchButton
             // 
-            this.reorderButton.Location = new System.Drawing.Point(259, 167);
-            this.reorderButton.Name = "reorderButton";
-            this.reorderButton.Size = new System.Drawing.Size(75, 23);
-            this.reorderButton.TabIndex = 4;
-            this.reorderButton.Text = "Set";
-            this.reorderButton.UseVisualStyleBackColor = true;
-            this.reorderButton.Click += new System.EventHandler(this.reorderButton_Click);
+            this.searchButton.Location = new System.Drawing.Point(259, 167);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(75, 23);
+            this.searchButton.TabIndex = 4;
+            this.searchButton.Text = "Search";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // readGenreTB
             // 
@@ -103,33 +103,26 @@
             // 
             // readTitleTB
             // 
-            this.readTitleTB.Location = new System.Drawing.Point(142, 141);
+            this.readTitleTB.Location = new System.Drawing.Point(95, 141);
             this.readTitleTB.Name = "readTitleTB";
             this.readTitleTB.Size = new System.Drawing.Size(192, 20);
             this.readTitleTB.TabIndex = 6;
             // 
             // searchTitleTB
             // 
-            this.searchTitleTB.Location = new System.Drawing.Point(142, 196);
+            this.searchTitleTB.Location = new System.Drawing.Point(95, 196);
             this.searchTitleTB.Name = "searchTitleTB";
             this.searchTitleTB.Size = new System.Drawing.Size(192, 20);
             this.searchTitleTB.TabIndex = 9;
-            this.searchTitleTB.Text = "Search";
             // 
             // searchGenreTB
             // 
             this.searchGenreTB.Location = new System.Drawing.Point(13, 196);
             this.searchGenreTB.Name = "searchGenreTB";
             this.searchGenreTB.Size = new System.Drawing.Size(75, 20);
-            this.searchGenreTB.TabIndex = 7;
-            this.searchGenreTB.Text = "Type?";
-            // 
-            // readIndexTB
-            // 
-            this.readIndexTB.Location = new System.Drawing.Point(95, 141);
-            this.readIndexTB.Name = "readIndexTB";
-            this.readIndexTB.Size = new System.Drawing.Size(41, 20);
-            this.readIndexTB.TabIndex = 9;
+            this.searchGenreTB.TabIndex = 8;
+            this.searchGenreTB.Text = "Search";
+            this.searchGenreTB.Enter += new System.EventHandler(this.searchGenreTB_Enter);
             // 
             // GenreLB
             // 
@@ -140,48 +133,54 @@
             this.GenreLB.TabIndex = 11;
             this.GenreLB.Text = "Genre";
             // 
-            // IndexLB
-            // 
-            this.IndexLB.AutoSize = true;
-            this.IndexLB.Location = new System.Drawing.Point(95, 115);
-            this.IndexLB.Name = "IndexLB";
-            this.IndexLB.Size = new System.Drawing.Size(33, 13);
-            this.IndexLB.TabIndex = 12;
-            this.IndexLB.Text = "Index";
-            // 
             // TitleLB
             // 
             this.TitleLB.AutoSize = true;
-            this.TitleLB.Location = new System.Drawing.Point(142, 115);
+            this.TitleLB.Location = new System.Drawing.Point(92, 115);
             this.TitleLB.Name = "TitleLB";
             this.TitleLB.Size = new System.Drawing.Size(27, 13);
             this.TitleLB.TabIndex = 13;
             this.TitleLB.Text = "Title";
             // 
-            // searchIndexTB
+            // QuantityLB
             // 
-            this.searchIndexTB.Enabled = false;
-            this.searchIndexTB.Location = new System.Drawing.Point(95, 196);
-            this.searchIndexTB.Name = "searchIndexTB";
-            this.searchIndexTB.Size = new System.Drawing.Size(41, 20);
-            this.searchIndexTB.TabIndex = 8;
-            this.searchIndexTB.Text = "Num";
+            this.QuantityLB.AutoSize = true;
+            this.QuantityLB.Location = new System.Drawing.Point(290, 115);
+            this.QuantityLB.Name = "QuantityLB";
+            this.QuantityLB.Size = new System.Drawing.Size(46, 13);
+            this.QuantityLB.TabIndex = 12;
+            this.QuantityLB.Text = "Quantity";
+            // 
+            // searchQuantityTB
+            // 
+            this.searchQuantityTB.Location = new System.Drawing.Point(293, 196);
+            this.searchQuantityTB.Name = "searchQuantityTB";
+            this.searchQuantityTB.Size = new System.Drawing.Size(41, 20);
+            this.searchQuantityTB.TabIndex = 10;
+            // 
+            // readQuantityTB
+            // 
+            this.readQuantityTB.Location = new System.Drawing.Point(293, 141);
+            this.readQuantityTB.Name = "readQuantityTB";
+            this.readQuantityTB.Size = new System.Drawing.Size(41, 20);
+            this.readQuantityTB.TabIndex = 7;
             // 
             // Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(357, 234);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(351, 234);
             this.Controls.Add(this.TitleLB);
-            this.Controls.Add(this.IndexLB);
+            this.Controls.Add(this.QuantityLB);
             this.Controls.Add(this.GenreLB);
-            this.Controls.Add(this.searchIndexTB);
-            this.Controls.Add(this.readIndexTB);
+            this.Controls.Add(this.searchQuantityTB);
+            this.Controls.Add(this.readQuantityTB);
             this.Controls.Add(this.searchTitleTB);
             this.Controls.Add(this.searchGenreTB);
             this.Controls.Add(this.readTitleTB);
             this.Controls.Add(this.readGenreTB);
-            this.Controls.Add(this.reorderButton);
+            this.Controls.Add(this.searchButton);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.addButton);
@@ -199,16 +198,16 @@
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button removeButton;
-        private System.Windows.Forms.Button reorderButton;
+        private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.TextBox readGenreTB;
         private System.Windows.Forms.TextBox readTitleTB;
         private System.Windows.Forms.TextBox searchTitleTB;
         private System.Windows.Forms.TextBox searchGenreTB;
-        private System.Windows.Forms.TextBox readIndexTB;
         private System.Windows.Forms.Label GenreLB;
-        private System.Windows.Forms.Label IndexLB;
         private System.Windows.Forms.Label TitleLB;
-        private System.Windows.Forms.TextBox searchIndexTB;
+        private System.Windows.Forms.Label QuantityLB;
+        private System.Windows.Forms.TextBox searchQuantityTB;
+        private System.Windows.Forms.TextBox readQuantityTB;
     }
 }
 

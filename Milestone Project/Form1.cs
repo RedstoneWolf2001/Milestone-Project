@@ -1,6 +1,6 @@
 ﻿/*  Code by Chris Peterson
-    Milestone 2
-    06-13-2022 at turn in
+    Milestone 3
+    06-28-2022 at turn in
 */
 
 using System;
@@ -21,56 +21,68 @@ namespace Milestone_Project
         public Inventory()
         {
             InitializeComponent();
-            readIndexTB.Text = DataListBox.Items.Count.ToString();
         }
 
 
 
-        private void addButton_click(object sender, EventArgs e)
+        private void addButton_click(object sender, EventArgs e) //Adds an item to the list
         {
-            Book input = new Book(readGenreTB.Text, DataListBox.Items.Count, readTitleTB.Text);
-            DataListBox.Items.Add(input);
-            readIndexTB.Text = DataListBox.Items.Count.ToString();
-            readGenreTB.Clear();
-            readTitleTB.Clear();
+            if (int.TryParse(readQuantityTB.Text, out int quantity))
+            {
+                Book input = new Book(readGenreTB.Text, readTitleTB.Text, quantity);
+                DataListBox.Items.Add(input);
+                readGenreTB.Clear();
+                readTitleTB.Clear();
+                readQuantityTB.Clear();
+            }
         }
 
-        private void editButton_Click(object sender, EventArgs e)
-        {
-            Book input = (Book)DataListBox.SelectedItem;
-            input.SetGenre(readGenreTB.Text);
-            input.SetTitle(readTitleTB.Text);
-            input.SetIndex(int.Parse(readIndexTB.Text));
-            DataListBox.Items.Remove(DataListBox.SelectedItem);
-
-            DataListBox.Items.Insert(input.GetIndex(), input);
-            readIndexTB.Text = DataListBox.Items.Count.ToString();
-
-        }
-
-        private void removeButton_Click(object sender, EventArgs e)
-        {
-            DataListBox.Items.Remove(DataListBox.SelectedItem);
-        }
-
-        private void reorderButton_Click(object sender, EventArgs e)
+        private void editButton_Click(object sender, EventArgs e)//Takes the populated item and edits it
         {
             Book input = (Book)DataListBox.SelectedItem;
-            searchGenreTB.Text = input.GetGenre();
-            searchTitleTB.Text = input.GetTitle();
-            searchIndexTB.Text = input.GetIndex().ToString();
+            if (input != null)
+            {
+                input.SetGenre(readGenreTB.Text);
+                input.SetTitle(readTitleTB.Text);
+                input.SetQuantity(int.Parse(readQuantityTB.Text));
+
+                DataListBox.Items.Remove(DataListBox.SelectedItem);
+                DataListBox.Items.Add(input);
+            }
         }
 
-        private void DataListBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void removeButton_Click(object sender, EventArgs e) //Removes the selected item
+        {
+            DataListBox.Items.Remove(DataListBox.SelectedItem);
+        }
+
+        private void searchButton_Click(object sender, EventArgs e) // Searches for an item based off of the approprate criteria
+        {
+            Book input = (Book)DataListBox.SelectedItem;
+
+            if (searchGenreTB.Text.Trim().Length > 0)
+                DataListBox.SelectedIndex = DataListBox.FindString(searchGenreTB.Text);
+            else if (searchTitleTB.Text.Trim().Length > 0)
+                DataListBox.SelectedIndex = DataListBox.FindString(searchTitleTB.Text);
+
+            
+        }
+
+        private void DataListBox_SelectedIndexChanged(object sender, EventArgs e) //Populates the text boxes for editing and removing.
         {
             Book input = (Book)DataListBox.SelectedItem;
             if (input != null)
             {
                 readGenreTB.Text = input.GetGenre();
                 readTitleTB.Text = input.GetTitle();
-                readIndexTB.Text = input.GetIndex().ToString();
+                readQuantityTB.Text = input.GetQuantity().ToString();
             }
 
+        }
+
+        private void searchGenreTB_Enter(object sender, EventArgs e) //Clears the box for input
+        {
+            searchGenreTB.Clear();
         }
     }
 
@@ -80,14 +92,14 @@ namespace Milestone_Project
     {
 
         private string Genre;
-        private int Index;
         private string Title;
+        private int Quantity;
 
-        public Book(string genre, int index, string title)
+        public Book(string genre, string title, int quantity)
         {
             Genre = genre;
-            Index = index;
             Title = title;
+            Quantity = quantity;
         }
 
         public string GetGenre()
@@ -100,9 +112,9 @@ namespace Milestone_Project
             return Title;
         }
 
-        public int GetIndex()
+        public int GetQuantity()
         {
-            return Index;
+            return Quantity;
         }
 
         public void SetGenre(string genre)
@@ -115,19 +127,14 @@ namespace Milestone_Project
             Title = title.Trim();
         }
 
-        public void SetIndex(int index)
+        public void SetQuantity(int quantity)
         {
-            Index = index;
+            Quantity = quantity;
         }
 
         public override string ToString()
         {
-            return Genre + " " + Index + " " + Title;
+            return (Genre + " " + Title + " " + Quantity);
         }
-
     }
-
-
-
-
 }
