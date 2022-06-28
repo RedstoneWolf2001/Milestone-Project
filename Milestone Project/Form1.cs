@@ -41,6 +41,7 @@ namespace Milestone_Project
             input.SetGenre(readGenreTB.Text);
             input.SetTitle(readTitleTB.Text);
             input.SetIndex(int.Parse(readIndexTB.Text));
+            DataListBox.Items.Remove(DataListBox.SelectedItem);
 
             DataListBox.Items.Insert(input.GetIndex(), input);
             readIndexTB.Text = DataListBox.Items.Count.ToString();
@@ -63,10 +64,12 @@ namespace Milestone_Project
         private void DataListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             Book input = (Book)DataListBox.SelectedItem;
-            readGenreTB.Text = input.GetGenre();
-            readTitleTB.Text = input.GetTitle();
-            readIndexTB.Text = input.GetIndex().ToString();
-
+            if (input != null)
+            {
+                readGenreTB.Text = input.GetGenre();
+                readTitleTB.Text = input.GetTitle();
+                readIndexTB.Text = input.GetIndex().ToString();
+            }
 
         }
     }
@@ -116,11 +119,6 @@ namespace Milestone_Project
         {
             Index = index;
         }
-
-        //public bool MoveAfter(Book book)
-        //{
-        //  Will continue in next milestone.    
-        //}
 
         public override string ToString()
         {
