@@ -23,8 +23,6 @@ namespace Milestone_Project
             InitializeComponent();
         }
 
-
-
         private void addButton_click(object sender, EventArgs e) //Adds an item to the list
         {
             if (int.TryParse(readQuantityTB.Text, out int quantity))
@@ -63,9 +61,7 @@ namespace Milestone_Project
             if (searchGenreTB.Text.Trim().Length > 0)
                 DataListBox.SelectedIndex = DataListBox.FindString(searchGenreTB.Text);
             else if (searchTitleTB.Text.Trim().Length > 0)
-                DataListBox.SelectedIndex = DataListBox.FindString(searchTitleTB.Text);
-
-            
+                DataListBox.SelectedIndex = DataListBox.FindString(searchTitleTB.Text);            
         }
 
         private void DataListBox_SelectedIndexChanged(object sender, EventArgs e) //Populates the text boxes for editing and removing.
@@ -77,64 +73,11 @@ namespace Milestone_Project
                 readTitleTB.Text = input.GetTitle();
                 readQuantityTB.Text = input.GetQuantity().ToString();
             }
-
         }
 
         private void searchGenreTB_Enter(object sender, EventArgs e) //Clears the box for input
         {
             searchGenreTB.Clear();
         }
-    }
-
-
-
-    public class Book
-    {
-
-        private string Genre;
-        private string Title;
-        private int Quantity;
-
-        public Book(string genre, string title, int quantity)
-        {
-            Genre = genre;
-            Title = title;
-            Quantity = quantity;
-        }
-
-        public string GetGenre()
-        {
-            return Genre;
-        }
-
-        public string GetTitle()
-        {
-            return Title;
-        }
-
-        public int GetQuantity()
-        {
-            return Quantity;
-        }
-
-        public void SetGenre(string genre)
-        {
-            Genre = genre.Trim();
-        }
-
-        public void SetTitle(string title)
-        {
-            Title = title.Trim();
-        }
-
-        public void SetQuantity(int quantity)
-        {
-            Quantity = quantity;
-        }
-
-        public override string ToString()
-        {
-            return (Genre + " " + Title + " " + Quantity);
-        }
-    }
+    }    
 }
