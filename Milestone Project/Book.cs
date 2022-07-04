@@ -8,18 +8,18 @@ namespace Milestone_Project
 {
     public class Book
     {
-
+        //set up variables
         private string Genre;
         private string Title;
         private int Quantity;
 
-        public Book(string genre, string title, int quantity)
+        public Book(string genre, string title, int quantity)//defining book
         {
             Genre = genre;
             Title = title;
             Quantity = quantity;
         }
-
+        //gets
         public string GetGenre()
         {
             return Genre;
@@ -34,7 +34,7 @@ namespace Milestone_Project
         {
             return Quantity;
         }
-
+        //sets
         public void SetGenre(string genre)
         {
             Genre = genre.Trim();
@@ -49,7 +49,7 @@ namespace Milestone_Project
         {
             Quantity = quantity;
         }
-
+        //to output properly in the Form
         public override string ToString()
         {
             return (Genre + " " + Title + " " + Quantity);

@@ -1,6 +1,6 @@
 ﻿/*  Code by Chris Peterson
-    Milestone 3
-    06-28-2022 at turn in
+    Milestone 5
+    07-03-2022
 */
 
 using System;
@@ -21,7 +21,7 @@ namespace Milestone_Project
         public Inventory()
         {
             InitializeComponent();
-        }
+        } 
 
         private void addButton_click(object sender, EventArgs e) //Adds an item to the list
         {
